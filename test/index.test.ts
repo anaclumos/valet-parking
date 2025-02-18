@@ -4,7 +4,7 @@ import { fileURLToPath } from "url"
 import nock from "nock"
 import { Probot, ProbotOctokit } from "probot"
 import { afterEach, beforeEach, describe, expect, test } from "vitest"
-import myProbotApp from "../src/index.js"
+import app from "../src/app"
 
 const issueCreatedBody = { body: "Thanks for opening this issue!" }
 
@@ -19,7 +19,7 @@ const payload = JSON.parse(
   fs.readFileSync(path.join(__dirname, "fixtures/issues.opened.json"), "utf-8"),
 )
 
-describe("My Probot app", () => {
+describe("Probot", () => {
   let probot: any
 
   beforeEach(() => {
@@ -27,14 +27,12 @@ describe("My Probot app", () => {
     probot = new Probot({
       appId: 123,
       privateKey,
-      // disable request throttling and retries for testing
       Octokit: ProbotOctokit.defaults({
         retry: { enabled: false },
         throttle: { enabled: false },
       }),
     })
-    // Load our app into probot
-    probot.load(myProbotApp)
+    probot.load(app)
   })
 
   test("creates a comment when an issue is opened", async () => {
