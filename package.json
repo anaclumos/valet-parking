@@ -12,8 +12,8 @@
     "probot-app"
   ],
   "scripts": {
-    "build": "bun build ./src/index.ts --outdir ./lib",
-    "start": "probot run ./lib/index.js",
+    "build": "bun build ./src/index.ts --outdir ./public",
+    "start": "probot run ./public/index.js",
     "test": "vitest"
   },
   "dependencies": {
