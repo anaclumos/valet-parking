@@ -8,7 +8,9 @@
   "scripts": {
     "build": "bun build ./src/app.ts --outdir ./dist",
     "start": "probot run ./dist/index.js",
-    "test": "vitest"
+    "test": "vitest",
+    "format": "biome format --write .",
+    "lint": "biome lint --write ."
   },
   "dependencies": {
     "lefthook": "^1.10.10",
