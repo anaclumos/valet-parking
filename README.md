@@ -1,4 +1,4 @@
-# bellboy
+# valet-parking
 
 > A GitHub App built with [Probot](https://github.com/probot/probot) that A nice welcoming bot that does the housekeeping for your repository
 
@@ -16,15 +16,15 @@ npm start
 
 ```sh
 # 1. Build container
-docker build -t bellboy .
+docker build -t valet-parking .
 
 # 2. Start container
-docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> bellboy
+docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> valet-parking
 ```
 
 ## Contributing
 
-If you have suggestions for how bellboy could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
+If you have suggestions for how valet-parking could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
 
 For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
