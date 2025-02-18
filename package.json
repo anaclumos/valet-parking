@@ -6,7 +6,7 @@
   "author": "Sunghyun Cho",
   "license": "MIT",
   "scripts": {
-    "build": "bun build ./src/app.ts --outdir ./dist",
+    "build": "bun build ./src/index.ts --outdir ./dist",
     "start": "probot run ./dist/index.js",
     "test": "vitest",
     "format": "biome format --write .",
