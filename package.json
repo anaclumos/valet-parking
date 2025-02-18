@@ -12,7 +12,7 @@
     "probot-app"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "bun build ./src/index.ts --outdir ./lib",
     "start": "probot run ./lib/index.js",
     "test": "vitest"
   },
