@@ -4,31 +4,33 @@
   "private": true,
   "description": "A nice welcoming bot that does the housekeeping for your repository",
   "author": "Sunghyun Cho",
-  "license": "ISC",
-  "homepage": "https://github.com//",
-  "keywords": [
-    "probot",
-    "github",
-    "probot-app"
-  ],
+  "license": "MIT",
   "scripts": {
     "build": "bun build ./src/app.ts --outdir ./dist",
     "start": "probot run ./dist/index.js",
     "test": "vitest"
   },
   "dependencies": {
+    "lefthook": "^1.10.10",
     "probot": "^13.0.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@types/bun": "latest",
     "@types/node": "^20.0.0",
-    "vitest": "^1.3.1",
-    "@types/bun": "latest"
+    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "vitest": "^1.3.1"
   },
   "peerDependencies": {
     "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">= 18"
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"],
+    "parserPreset": "conventional-changelog-conventionalcommits"
   },
   "type": "module"
 }

@@ -1,0 +1,19 @@
+pre-push:
+  commands:
+    biome:
+      name: 🛡️ Guarding Against Bad Code
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      run: bunx @biomejs/biome check --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {push_files}
+
+pre-commit:
+  commands:
+    biome:
+      name: 🧹 Making Sure Everything is Formatted & Linted
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      run: bunx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
+      stage_fixed: true
+
+commit-msg:
+  commands:
+    "lint commit message":
+      run: bunx commitlint --edit {1}
